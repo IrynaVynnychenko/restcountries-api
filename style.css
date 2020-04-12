@@ -1,15 +1,27 @@
 .section {
-  width: 100%;
-  max-width: 1170px;
   min-height: 400px;
-  padding: 0px 15px;
-  margin-left: auto;
-  margin-right: auto;
+
   background-color: #705ac6a4;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+section {
+  width: 100%;
+  max-width: 1170px;
+  padding: 0px 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.description {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: darkblue;
 }
 
 .submit-button {
@@ -20,6 +32,7 @@
   font-weight: bold;
   border-color: #fff;
   font-size: 18px;
+  font-family: "Times New Roman";
 }
 
 .submit-button:focus {
