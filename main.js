@@ -21,25 +21,37 @@ mainButton.addEventListener("click", async (e) => {
     (country) => searchCountry.value === country.name
   );
 
-  searchedCountry.forEach((country, countryIndex) => {
-    let li = document.createElement("li");
-    ul.appendChild(li);
-    li.innerHTML = `${countryIndex + 1}. ${country.name}, capital - ${
-      country.capital
-    }`;
-    const iframe = document.createElement("iframe");
-    iframe.src = `https://maps.google.com/maps?q=${country.latlng[0]},${country.latlng[1]}&hl=es&z=4&output=embed`;
-    section.appendChild(iframe);
+  const table = document.createElement("table");
+  block.appendChild(table);
 
-    let langUl = document.createElement("ul");
-    li.appendChild(langUl);
-    let translations = country.translations;
-
-    for (const lang in translations) {
-      let liLang = document.createElement("li");
-      langUl.appendChild(liLang);
-      liLang.innerHTML = `${lang}: ${translations[lang]}`;
+  searchedCountry.forEach((country) => {
+    const tr = document.createElement("tr");
+    for (const countryIndex in country) {
+      const th = document.createElement("th");
+      th.innerHTML = countryIndex;
+      tr.appendChild(th);
     }
+    table.appendChild(tr);
+    const trAnother = document.createElement("tr");
+    table.appendChild(trAnother);
+
+    for (const key in country) {
+      const td = document.createElement("td");
+      trAnother.appendChild(td);
+      if (typeof country[key] === 'object') {
+        for (const item in country[key]) {
+          const span = document.createElement("span");
+          td.appendChild(span);
+          span.innerHTML = Array.isArray(country[key]) ? `${country[key][item]}` : `${item}: ${country[key][item]}`
+        }
+      } else {
+        td.innerHTML = country[key];
+      }
+    }
+
+    // let iframe = document.createElement("iframe");
+    // iframe.src = `https://maps.google.com/maps?q=${country.latlng[0]},${country.latlng[1]}&hl=es&z=4&output=embed`;
+    // section.appendChild(iframe);
   });
 });
 

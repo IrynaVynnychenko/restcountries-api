@@ -35,6 +35,7 @@ section {
   border-color: #fff;
   font-size: 18px;
   font-family: "Times New Roman";
+  border-radius: 10px;
 }
 
 .submit-button:focus {
@@ -48,6 +49,9 @@ section {
 
 .block {
   margin-top: 20px;
+  width: 800px;
+  overflow-x: scroll;
+  min-height: 200px;
 }
 
 li {
@@ -74,4 +78,13 @@ iframe {
 
 ul.first-list {
   padding-left: 0px;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+span {
+  display: block;
 }
