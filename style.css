@@ -23,7 +23,7 @@ section {
   padding-top: 20px;
   font-size: 24px;
   font-weight: bold;
-  color: darkblue;
+  color: darkmagenta;
 }
 
 .submit-button {
@@ -36,6 +36,7 @@ section {
   font-size: 18px;
   font-family: "Times New Roman";
   border-radius: 10px;
+  border-style: solid;
 }
 
 .submit-button:focus {
@@ -62,9 +63,9 @@ li {
   margin-bottom: 20px;
   width: 198px;
   height: 22px;
-  border: 2px solid violet;
   padding: 10px;
   font-size: 18px;
+  border: 2px solid #fca70c;
 }
 
 #searchCountry:focus {
@@ -74,6 +75,9 @@ li {
 iframe {
   width: 300px;
   height: 170px;
+  margin-top: 26px;
+  border-radius: 10px;
+  border: 2px solid #fff;
 }
 
 ul.first-list {
@@ -85,6 +89,47 @@ td {
   padding: 10px;
 }
 
+td {
+  color: #fff;
+}
+
+th {
+  color: darkmagenta;
+}
+
 span {
   display: block;
+}
+
+::-webkit-scrollbar {
+  /* 1 - скроллбар */
+  width: 4px;
+  height: 4px;
+  background-color: #ffffff;
+}
+
+::-webkit-scrollbar-button {
+  /* 2 - кнопка */
+  background-color: darkmagenta;
+}
+
+::-webkit-scrollbar-track {
+  /* 3 - трек */
+}
+
+::-webkit-scrollbar-track-piece {
+  /* 4 - видимая часть трека */
+}
+
+::-webkit-scrollbar-thumb {
+  /* 5 - ползунок */
+  background-color: darkmagenta;
+}
+
+::-webkit-scrollbar-corner {
+  /* 6 - уголок */
+}
+
+::-webkit-resizer {
+  /* 7 - изменение размеров */
 }

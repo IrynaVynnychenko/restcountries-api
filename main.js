@@ -21,6 +21,16 @@ mainButton.addEventListener("click", async (e) => {
     (country) => searchCountry.value === country.name
   );
 
+  const tableAppear = document.querySelector("table");
+  if (tableAppear) {
+    tableAppear.remove();
+  }
+
+  const map = document.querySelector("iframe");
+  if (map) {
+    map.remove();
+  }
+
   const table = document.createElement("table");
   block.appendChild(table);
 
@@ -38,20 +48,22 @@ mainButton.addEventListener("click", async (e) => {
     for (const key in country) {
       const td = document.createElement("td");
       trAnother.appendChild(td);
-      if (typeof country[key] === 'object') {
+      if (typeof country[key] === "object") {
         for (const item in country[key]) {
           const span = document.createElement("span");
           td.appendChild(span);
-          span.innerHTML = Array.isArray(country[key]) ? `${country[key][item]}` : `${item}: ${country[key][item]}`
+          span.innerHTML = Array.isArray(country[key])
+            ? `${country[key][item]}`
+            : `${item}: ${country[key][item]}`;
         }
       } else {
         td.innerHTML = country[key];
       }
     }
 
-    // let iframe = document.createElement("iframe");
-    // iframe.src = `https://maps.google.com/maps?q=${country.latlng[0]},${country.latlng[1]}&hl=es&z=4&output=embed`;
-    // section.appendChild(iframe);
+    let iframe = document.createElement("iframe");
+    iframe.src = `https://maps.google.com/maps?q=${country.latlng[0]},${country.latlng[1]}&hl=es&z=4&output=embed`;
+    section.appendChild(iframe);
   });
 });
 
